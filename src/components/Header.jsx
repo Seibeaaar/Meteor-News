@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types';
 import moment from "moment";
+import { connect } from 'react-redux';
 import {
   Facebook,
   Instagram,
@@ -7,10 +9,11 @@ import {
   KeyboardArrowDown,
   KeyboardArrowUp,
 } from "@material-ui/icons";
+import countries from '../data/countries.json';
 import { HeaderWrapper, ToggleButton } from "../styled/StyledHeader";
 import CountriesList from './CountriesList';
 
-const Header = () => {
+const Header = ({ country }) => {
   const [listOpen, setListOpen] = useState(false);
   const toggleList = () => setListOpen(!listOpen);
   return (
@@ -21,7 +24,7 @@ const Header = () => {
           <span>{moment().format("dddd, MMMM D")}</span>
           <div>
             <ToggleButton onClick={toggleList} active={listOpen}>
-              Choose country
+              { countries[country] }
               {listOpen ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
             </ToggleButton>
             <a href="/">
@@ -40,4 +43,13 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = state => {
+  const { country } = state.main;
+  return { country };
+}
+
+Header.propTypes = {
+  country: PropTypes.string.isRequired,
+}
+
+export default connect(mapStateToProps, null)(Header);
