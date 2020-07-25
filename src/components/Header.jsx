@@ -15,10 +15,14 @@ import CountriesList from './CountriesList';
 
 const Header = ({ country }) => {
   const [listOpen, setListOpen] = useState(false);
-  const toggleList = () => setListOpen(!listOpen);
+  const toggleList = (status) => setListOpen(status);
   return (
     <div>
-      <CountriesList active={listOpen} country={country}/>
+      <CountriesList 
+        active={listOpen} 
+        country={country}
+        toggleList={toggleList}
+      />
       <HeaderWrapper>
         <div className="container d-flex justify-content-between">
           <span>{moment().format("dddd, MMMM D")}</span>

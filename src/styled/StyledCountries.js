@@ -4,7 +4,7 @@ export const ListWrapper = styled.div`
   background-color: #3e3e3e;
   padding: 15px;
   color: #fff;
-  margin-top: ${props => props.active ? '0' : '-263.6px'};
+  margin-top: ${props => !props.active && '-263.6px'};
   transition: margin-top ease-out .7s;
   .list__container {
     max-height: 200px;

@@ -1,10 +1,12 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, select } from 'redux-saga/effects';
 import { getNewsByParams, getNewsByKeyword } from '../api';
 
 // saga for fetching main news
-function* fetchMainNews(action) {
+function* fetchMainNews() {
   try {
-    const data = yield call(getNewsByParams, action.payload);
+    const mainState = state => state.main;
+    const { country, category } = yield select(mainState);
+    const data = yield call(getNewsByParams, country, category);
     yield put({ type: 'GET_MAIN_NEWS', payload: data });
   } catch (e) {
     yield put({ type: 'MAIN_NEWS_ERROR', payload: e });
