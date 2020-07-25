@@ -18,7 +18,7 @@ const Header = ({ country }) => {
   const toggleList = () => setListOpen(!listOpen);
   return (
     <div>
-      <CountriesList active={listOpen}/>
+      <CountriesList active={listOpen} country={country}/>
       <HeaderWrapper>
         <div className="container d-flex justify-content-between">
           <span>{moment().format("dddd, MMMM D")}</span>

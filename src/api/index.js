@@ -7,10 +7,10 @@ const instance = axios.create({
   },
 })
 
-export const getNewsByParams = async (country, category) => {
+export const getNewsByParams = async (country = 'us', category = 'general') => {
   try {
-    const res = await instance.get(`/top-headlines?country=${country}&category=${category}`);
-    return res;
+    const { data } = await instance.get(`/top-headlines?country=${country}&category=${category}`);
+    return data.articles;
   } catch (e) {
     throw new Error(e);
   }
@@ -18,8 +18,8 @@ export const getNewsByParams = async (country, category) => {
 
 export const getNewsByKeyword = async (keyword) => {
   try {
-    const res = await instance.get(`/everythin?q=${keyword}`);
-    return res;
+    const { data } = await instance.get(`/everything?q=${keyword}`);
+    return data.articles;
   } catch (e) {
     throw new Error(e);
   }

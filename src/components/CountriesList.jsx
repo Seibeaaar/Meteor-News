@@ -1,34 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { connect } from 'react-redux';
 import countries from "../data/countries.json";
+import { chooseCountry } from '../redux/actions';
+import { ListWrapper, Country } from '../styled/StyledCountries';
 
-const ListWrapper = styled.div`
-  background-color: #3e3e3e;
-  padding: 15px;
-  color: #fff;
-  margin-top: ${props => props.active ? '0' : '-263.6px'};
-  transition: margin-top ease-out .7s;
-  .list__container {
-    max-height: 200px;
-    div {
-      cursor: pointer;
-      width: fit-content;
-      &:hover {
-        font-weight: bold;
-      }
-    }
-  }
-`;
-
-const CountriesList = ({ active }) => {
+const CountriesList = ({ active, country, chooseCountry }) => {
   return (
-    <ListWrapper active={active}>
+    <ListWrapper active={active} country={country}>
       <div className="container">
         <h3>Choose a country:</h3>
         <div className="d-flex flex-column flex-wrap list__container">
           {Object.keys(countries).map((c) => (
-            <div key={c}>{countries[c]}</div>
+            <Country key={c} current={c === country} onClick={() => chooseCountry(c)}>{countries[c]}</Country>
           ))}
         </div>
       </div>
@@ -38,6 +22,8 @@ const CountriesList = ({ active }) => {
 
 CountriesList.propTypes = {
   active: PropTypes.bool.isRequired,
+  country: PropTypes.string.isRequired,
+  chooseCountry: PropTypes.func.isRequired,
 };
 
-export default CountriesList;
+export default connect(null, { chooseCountry })(CountriesList);
