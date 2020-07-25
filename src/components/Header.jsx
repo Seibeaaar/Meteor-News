@@ -1,43 +1,43 @@
-import React from 'react';
-import moment from 'moment';
-import styled from 'styled-components';
-import { Facebook, Instagram, LinkedIn } from '@material-ui/icons';
-
-const HeaderWrapper = styled.header`
-  background-color: #1a0e36;
-  color: #767676;
-  padding: 15px 0;
-  a {
-    margin-left: 15px;
-    color: #767676;
-    transition: color ease .4s;
-    &:hover {
-      color: #fff;
-    }
-  }
-`
+import React, { useState } from "react";
+import moment from "moment";
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  KeyboardArrowDown,
+  KeyboardArrowUp,
+} from "@material-ui/icons";
+import { HeaderWrapper, ToggleButton } from "../styled/StyledHeader";
+import CountriesList from './CountriesList';
 
 const Header = () => {
-  return ( 
-    <HeaderWrapper>
-      <div className="container d-flex justify-content-between">
-        <span>
-          { moment().format('dddd, MMMM D') }
-        </span>
-        <div>
-          <a href="/">
-            <Facebook />
-          </a>
-          <a href="/">
-            <Instagram />
-          </a>
-          <a href="/">
-            <LinkedIn />
-          </a>
+  const [listOpen, setListOpen] = useState(false);
+  const toggleList = () => setListOpen(!listOpen);
+  return (
+    <div>
+      <CountriesList active={listOpen}/>
+      <HeaderWrapper>
+        <div className="container d-flex justify-content-between">
+          <span>{moment().format("dddd, MMMM D")}</span>
+          <div>
+            <ToggleButton onClick={toggleList} active={listOpen}>
+              Choose country
+              {listOpen ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
+            </ToggleButton>
+            <a href="/">
+              <Facebook />
+            </a>
+            <a href="/">
+              <Instagram />
+            </a>
+            <a href="/">
+              <LinkedIn />
+            </a>
+          </div>
         </div>
-      </div>
-    </HeaderWrapper>
+      </HeaderWrapper>
+    </div>
   );
-}
- 
+};
+
 export default Header;
