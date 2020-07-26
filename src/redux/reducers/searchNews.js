@@ -8,7 +8,7 @@ const searchNewsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_KEYWORD':
       return {...state, keyword: payload};
-    case 'GET_SEARCH_NEWS':
+    case 'SEARCH_NEWS_SUCCESS':
       return {...state, news: payload};
     case 'SEARCH_NEWS_ERROR':
       return {...state, error: payload};

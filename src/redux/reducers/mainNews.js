@@ -12,7 +12,7 @@ const mainNewsReducer = (state = initialState, { type, payload }) => {
       return {...state, country: payload};
     case 'CHOOSE_CATEGORY':
       return {...state, category: payload};
-    case 'GET_MAIN_NEWS':
+    case 'MAIN_NEWS_SUCCESS':
       return {...state, topNews: payload.slice(0, 3), otherNews: payload.slice(3)};
     case 'MAIN_NEWS_ERROR':
       return {...state, error: payload};

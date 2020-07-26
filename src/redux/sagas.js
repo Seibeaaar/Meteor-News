@@ -7,7 +7,7 @@ export function* fetchMainNews() {
     const mainState = state => state.main;
     const { country, category } = yield select(mainState);
     const data = yield call(getNewsByParams, country, category);
-    yield put({ type: 'GET_MAIN_NEWS', payload: data });
+    yield put({ type: 'MAIN_NEWS_SUCCESS', payload: data });
   } catch (e) {
     yield put({ type: 'MAIN_NEWS_ERROR', payload: e });
   }
@@ -17,7 +17,7 @@ export function* fetchMainNews() {
 function* fetchSearchNews(action) {
   try {
     const data = yield call(getNewsByKeyword, action.payload);
-    yield put({ type: 'GET_SEARCH_NEWS', payload: data });
+    yield put({ type: 'SEARCH_NEWS_SUCCESS', payload: data });
   } catch (e) {
     yield put({ type: 'SEARCH_NEWS_ERROR', payload: e });
   }
