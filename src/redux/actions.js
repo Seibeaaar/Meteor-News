@@ -1,3 +1,9 @@
+export const mainNewsRequest = () => {
+  return {
+    type: 'MAIN_NEWS_REQUEST',
+  }
+}
+
 export const chooseCategory = category => {
   return {
     type: 'CHOOSE_CATEGORY',

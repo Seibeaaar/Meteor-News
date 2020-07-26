@@ -24,6 +24,7 @@ const Searchbar = ({ setKeyword }) => {
         placeholder="Use keywords, ex. Trump"
         onChange={searchHandler}
         onKeyPress={searchNews}
+        value={search}
       />
       {active ? (
         <Clear className="search__icon" onClick={activeHandler} />

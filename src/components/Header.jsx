@@ -27,7 +27,7 @@ const Header = ({ country }) => {
         <div className="container d-flex justify-content-between">
           <span>{moment().format("dddd, MMMM D")}</span>
           <div>
-            <ToggleButton onClick={toggleList} active={listOpen}>
+            <ToggleButton onClick={() => setListOpen(!listOpen)} active={listOpen}>
               { countries[country] }
               {listOpen ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
             </ToggleButton>

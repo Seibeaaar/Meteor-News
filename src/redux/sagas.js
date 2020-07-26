@@ -1,8 +1,8 @@
-import { call, put, takeEvery, select } from 'redux-saga/effects';
+import { call, put, takeEvery, select, takeLatest } from 'redux-saga/effects';
 import { getNewsByParams, getNewsByKeyword } from '../api';
 
 // saga for fetching main news
-function* fetchMainNews() {
+export function* fetchMainNews() {
   try {
     const mainState = state => state.main;
     const { country, category } = yield select(mainState);
@@ -26,5 +26,6 @@ function* fetchSearchNews(action) {
 export default function* rootSaga() {
   yield takeEvery('CHOOSE_CATEGORY', fetchMainNews);
   yield takeEvery('CHOOSE_COUNTRY', fetchMainNews);
+  yield takeLatest('MAIN_NEWS_REQUEST', fetchMainNews);
   yield takeEvery('SET_KEYWORD', fetchSearchNews);
 }
