@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { chooseCategory } from '../redux/actions';
-import HeaderLogo from "../assets/HeaderLogo.png";
-import categories from '../data/categories.json';
+import { chooseCategory } from '../../redux/actions';
+import HeaderLogo from "../../assets/HeaderLogo.png";
+import categories from '../../data/categories.json';
 import Searchbar from './Searchbar';
-import { Logo, Category } from '../styled/StyledNavbar';
+import { Logo, Category } from '../../styled/StyledNavbar';
 
 const Navbar = ({ category, chooseCategory }) => {
   return (

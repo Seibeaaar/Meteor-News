@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setKeyword } from '../redux/actions';
-import { SearchInput } from '../styled/StyledNavbar';
+import { setKeyword } from '../../redux/actions';
+import { SearchInput } from '../../styled/StyledNavbar';
 import { Search, Clear } from '@material-ui/icons';
 
 const Searchbar = ({ setKeyword }) => {

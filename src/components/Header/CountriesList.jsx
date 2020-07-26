@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
-import countries from "../data/countries.json";
-import { chooseCountry } from '../redux/actions';
-import { ListWrapper, Country } from '../styled/StyledCountries';
+import countries from "../../data/countries.json";
+import { chooseCountry } from '../../redux/actions';
+import { ListWrapper, Country } from '../../styled/StyledCountries';
 
 const CountriesList = ({ active, country, chooseCountry, toggleList }) => {
   const listHandler = country => {

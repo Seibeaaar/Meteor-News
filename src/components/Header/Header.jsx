@@ -9,8 +9,8 @@ import {
   KeyboardArrowDown,
   KeyboardArrowUp,
 } from "@material-ui/icons";
-import countries from '../data/countries.json';
-import { HeaderWrapper, ToggleButton } from "../styled/StyledHeader";
+import countries from '../../data/countries.json';
+import { HeaderWrapper, ToggleButton } from "../../styled/StyledHeader";
 import CountriesList from './CountriesList';
 
 const Header = ({ country }) => {
