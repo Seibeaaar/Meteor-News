@@ -1,3 +1,10 @@
+export const setLoading = status => {
+  return {
+    type: 'SET_LOADING',
+    payload: status,
+  }
+}
+
 export const mainNewsRequest = () => {
   return {
     type: 'MAIN_NEWS_REQUEST',

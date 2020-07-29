@@ -3,11 +3,13 @@ import { getNewsByParams, getNewsByKeyword } from '../api';
 
 // saga for fetching main news
 export function* fetchMainNews() {
+  yield put({ type: 'SET_LOADING', payload: true});
   try {
     const mainState = state => state.main;
     const { country, category } = yield select(mainState);
     const data = yield call(getNewsByParams, country, category);
     yield put({ type: 'MAIN_NEWS_SUCCESS', payload: data });
+    yield put({ type: 'SET_LOADING', payload: false});
   } catch (e) {
     yield put({ type: 'MAIN_NEWS_ERROR', payload: e });
   }

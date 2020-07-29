@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FullLoader = styled.div`
+export const FullLoader = styled.div `
   width: 100%;
   height: 100vh;
   img {
@@ -20,4 +20,9 @@ export const FullLoader = styled.div`
       transform: scale(1.5);
     }
   }
+`;
+
+export const InitialLoader = styled.div `
+  width: 100%;
+  height: calc(100vh - 150px);
 `;

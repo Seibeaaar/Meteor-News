@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TopNews = styled.div`
   position: relative;
-  height: 750px;
+  height: calc(100vh - 150px);
   background-size: cover;
   background-position: top;
   background-image: url(${props => props.image});
