@@ -21,6 +21,7 @@ const Searchbar = ({ setKeyword }) => {
     <SearchInput active={active}>
       <input 
         type="text" 
+        autoFocus
         placeholder="Use keywords, ex. Trump"
         onChange={searchHandler}
         onKeyPress={searchNews}

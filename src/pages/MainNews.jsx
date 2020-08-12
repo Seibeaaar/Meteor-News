@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { mainNewsRequest } from "../redux/actions";
-import TopNewsItem from "../components/TopNewsItem";
 import NewsLoader from "../components/app/NewsLoader";
+import OtherNews from "../components/OtherNews/OtherNews";
+import { NewsWrapper } from "../styled/StyledMainNews";
+import TopNews from "../components/TopNews/TopNews";
 
 const MainNews = ({ topNews, otherNews, loading, mainNewsRequest }) => {
   useEffect(() => {
@@ -14,10 +16,13 @@ const MainNews = ({ topNews, otherNews, loading, mainNewsRequest }) => {
       {loading ? (
         <NewsLoader />
       ) : (
-        <div className="row">
-          {topNews.map((n) => (
-            <TopNewsItem info={n} key={n.url} />
-          ))}
+        <div>
+          <TopNews topNews={topNews}/>
+          <NewsWrapper>
+            <div className="container">
+              <OtherNews news={otherNews} />
+            </div>
+          </NewsWrapper>
         </div>
       )}
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from 'moment';
-import { TopNews } from "../styled/StyledTopNews";
+import { TopNews } from "../../styled/StyledTopNews";
 
 const TopNewsItem = ({
   info: { source, title, url, urlToImage, publishedAt },
