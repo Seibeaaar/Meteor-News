@@ -18,7 +18,8 @@ const OtherNewsItem = ({
   return (
     // If index of news item is zero, it's falsy value and width of that item will be full
     <NewsItem className={index ? "col-md-6" : "col-md-12"}>
-      <a href={url} target="_blank" rel="noopener noreferrer">
+      {/* if index is zero(falsy value), class main__item is added */}
+      <a href={url} target="_blank" rel="noopener noreferrer" className={!index && 'main__item'}>
         {/* setting image src attribute depending on state value */}
         <img src={imageIsValid ? urlToImage : NotFound} alt="Preview" />
         <div className="newsitem__info">

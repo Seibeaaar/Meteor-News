@@ -6,6 +6,7 @@ import NewsLoader from "../components/app/NewsLoader";
 import OtherNews from "../components/OtherNews/OtherNews";
 import { NewsWrapper } from "../styled/StyledMainNews";
 import TopNews from "../components/TopNews/TopNews";
+import AdMockup from '../components/app/AdMockup';
 
 const MainNews = ({ topNews, otherNews, loading, mainNewsRequest }) => {
   useEffect(() => {
@@ -20,7 +21,10 @@ const MainNews = ({ topNews, otherNews, loading, mainNewsRequest }) => {
           <TopNews topNews={topNews}/>
           <NewsWrapper>
             <div className="container">
-              <OtherNews news={otherNews} />
+              <div className="row">
+                <OtherNews news={otherNews} />
+                <AdMockup />
+              </div>
             </div>
           </NewsWrapper>
         </div>

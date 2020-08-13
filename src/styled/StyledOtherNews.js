@@ -6,6 +6,14 @@ export const NewsItem = styled.div`
     width: 100%;
     height: 290px;
   }
+  .main__item {
+    img {
+      height: 390px;
+    }
+    .newsitem__info {
+      min-height: calc(100% - 390px);
+    }
+  }
   .newsitem__info {
     align-self: stretch;
     background-color: #fff;
@@ -18,6 +26,9 @@ export const NewsItem = styled.div`
         margin: 0 10px;
         margin-top: -2px;
       }
+    }
+    p {
+      margin-top: 35px;
     }
   }
 `;
