@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Meteor-News/static/css/main.67fce65c.chunk.css",
+    "main.js": "/Meteor-News/static/js/main.225df249.chunk.js",
+    "main.js.map": "/Meteor-News/static/js/main.225df249.chunk.js.map",
+    "runtime-main.js": "/Meteor-News/static/js/runtime-main.d3d62bab.js",
+    "runtime-main.js.map": "/Meteor-News/static/js/runtime-main.d3d62bab.js.map",
+    "static/js/2.c9ada37f.chunk.js": "/Meteor-News/static/js/2.c9ada37f.chunk.js",
+    "static/js/2.c9ada37f.chunk.js.map": "/Meteor-News/static/js/2.c9ada37f.chunk.js.map",
+    "static/js/3.327dbd69.chunk.js": "/Meteor-News/static/js/3.327dbd69.chunk.js",
+    "static/js/3.327dbd69.chunk.js.map": "/Meteor-News/static/js/3.327dbd69.chunk.js.map",
+    "static/js/4.ddf2fd2e.chunk.js": "/Meteor-News/static/js/4.ddf2fd2e.chunk.js",
+    "static/js/4.ddf2fd2e.chunk.js.map": "/Meteor-News/static/js/4.ddf2fd2e.chunk.js.map",
+    "index.html": "/Meteor-News/index.html",
+    "precache-manifest.f8ec904615b1d8a52d736581a8ace858.js": "/Meteor-News/precache-manifest.f8ec904615b1d8a52d736581a8ace858.js",
+    "service-worker.js": "/Meteor-News/service-worker.js",
+    "static/css/main.67fce65c.chunk.css.map": "/Meteor-News/static/css/main.67fce65c.chunk.css.map",
+    "static/js/2.c9ada37f.chunk.js.LICENSE.txt": "/Meteor-News/static/js/2.c9ada37f.chunk.js.LICENSE.txt",
+    "static/media/NotFound.jpg": "/Meteor-News/static/media/NotFound.defc1297.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d3d62bab.js",
+    "static/js/2.c9ada37f.chunk.js",
+    "static/css/main.67fce65c.chunk.css",
+    "static/js/main.225df249.chunk.js"
+  ]
+}
