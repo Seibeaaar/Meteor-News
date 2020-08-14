@@ -5,6 +5,7 @@ export const AdWrapper = styled.div`
   color: #fff;
   max-height: 435px;
   padding: 80px 25px 40px;
+  margin-bottom: 50px;
   p {
     margin-top: calc(100% - 40px);
   }

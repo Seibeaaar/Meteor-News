@@ -5,7 +5,7 @@ import OtherNewsItem from './OtherNewsItem';
 const OtherNews = ({ news }) => {
   return ( 
     <div className="row col-md-9">
-      { news.map((n, i) => <OtherNewsItem key={n.url} info={n} index={i}/>) }
+      { news.length ? news.map((n, i) => <OtherNewsItem key={n.url} info={n} index={i}/>) : <h1>No news found</h1> }
     </div>
   );
 }
