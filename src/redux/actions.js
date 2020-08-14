@@ -25,6 +25,20 @@ export const chooseCountry = country => {
   }
 }
 
+export const restoreCountry = country => {
+  return {
+    type: 'RESTORE_COUNTRY',
+    payload: country,
+  }
+}
+
+export const restoreCategory = category => {
+  return {
+    type: 'RESTORE_CATEGORY',
+    payload: category,
+  }
+}
+
 export const setKeyword = keyword => {
   return {
     type: 'SET_KEYWORD',

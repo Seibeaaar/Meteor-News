@@ -28,7 +28,7 @@ const Header = ({ country }) => {
           <span>{moment().format("dddd, MMMM D")}</span>
           <div>
             <ToggleButton onClick={() => setListOpen(!listOpen)} active={listOpen}>
-              { countries[country] }
+              { countries[country] || 'Select a country' }
               {listOpen ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
             </ToggleButton>
             <a href="/">

@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { chooseCategory } from '../../redux/actions';
+import { chooseCategory, restoreCategory } from '../../redux/actions';
 import HeaderLogo from "../../assets/HeaderLogo.png";
 import categories from '../../data/categories.json';
 import Searchbar from './Searchbar';
 import { Logo, Category } from '../../styled/StyledNavbar';
 
-const Navbar = ({ category, chooseCategory }) => {
+const Navbar = ({ category, chooseCategory, restoreCategory }) => {
   return (
     <div className="container d-flex justify-content-between align-items-center">
       <div className="d-flex">
@@ -19,7 +19,7 @@ const Navbar = ({ category, chooseCategory }) => {
               <Category 
                 key={cat} 
                 current={cat === category}
-                onClick={() => chooseCategory(cat)}
+                onClick={() => category ? chooseCategory(cat) : restoreCategory(cat)}
               >{ cat }</Category>
             ) }
           </ul>
@@ -38,6 +38,7 @@ const mapStateToProps = state => {
 Navbar.propTypes = {
   category: PropTypes.string.isRequired,
   chooseCategory: PropTypes.func.isRequired,
+  restoreCategory: PropTypes.func.isRequired,
 }
 
-export default connect(mapStateToProps, { chooseCategory })(Navbar);
+export default connect(mapStateToProps, { chooseCategory, restoreCategory })(Navbar);

@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import countries from "../../data/countries.json";
-import { chooseCountry } from '../../redux/actions';
+import { chooseCountry, restoreCountry } from '../../redux/actions';
 import { ListWrapper, Country } from '../../styled/StyledCountries';
 
-const CountriesList = ({ active, country, chooseCountry, toggleList }) => {
+const CountriesList = ({ active, country, stateCountry, chooseCountry, restoreCountry, toggleList }) => {
   const listHandler = country => {
-    chooseCountry(country);
+    stateCountry ? chooseCountry(country) : restoreCountry(country);
     toggleList(false);
   }
   return (
@@ -24,11 +24,18 @@ const CountriesList = ({ active, country, chooseCountry, toggleList }) => {
   );
 };
 
+const mapStateToProps = state => {
+  const { country } = state.main;
+  return { stateCountry: country };
+}
+
 CountriesList.propTypes = {
   active: PropTypes.bool.isRequired,
   country: PropTypes.string.isRequired,
+  stateCountry: PropTypes.string.isRequired,
   chooseCountry: PropTypes.func.isRequired,
+  restoreCountry: PropTypes.func.isRequired,
   toggleList: PropTypes.func.isRequired,
 };
 
-export default connect(null, { chooseCountry })(CountriesList);
+export default connect(null, { chooseCountry, restoreCountry })(CountriesList);
