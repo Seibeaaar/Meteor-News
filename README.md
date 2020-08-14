@@ -15,5 +15,6 @@ Meteor News is written with the usage of:
 - Redux Saga (for handling async actions in Redux);
 - Axios (for handling API requests);
 - Styled components (writing styled for the app);
+- Bootstrap (for basic styled and grid templates);
 - MomentJS;
 - Material UI Icons;
