@@ -31,13 +31,13 @@ const Header = ({ country }) => {
               { countries[country] || 'Select a country' }
               {listOpen ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
             </ToggleButton>
-            <a href="/">
+            <a href="https://www.facebook.com/yuriy.barylyak.5/" target="_blank" rel="noopener noreferrer">
               <Facebook />
             </a>
-            <a href="/">
+            <a href="https://www.instagram.com/__baryliak__/" target="_blank" rel="noopener noreferrer">
               <Instagram />
             </a>
-            <a href="/">
+            <a href="https://www.linkedin.com/in/yurii-baryliak/" target="_blank" rel="noopener noreferrer">
               <LinkedIn />
             </a>
           </div>
