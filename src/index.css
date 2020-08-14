@@ -37,6 +37,9 @@ li {
   cursor: pointer;
 }
 
+/* Bootstrap normalize */
+
 .row {
   margin: 0;
+  padding: 0;
 }

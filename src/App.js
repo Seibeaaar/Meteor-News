@@ -9,6 +9,7 @@ import {
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import FullPageLoader from './components/app/FullPageLoader';
+import FooterContainer from './components/Footer/FooterContainer';
 
 const MainNews = React.lazy(() => import('./pages/MainNews'));
 
@@ -21,6 +22,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={MainNews}/>
         </Switch>
+        <FooterContainer />
       </Router>
     </Suspense>
   );
